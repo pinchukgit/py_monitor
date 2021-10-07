@@ -1,0 +1,13 @@
+version: "3.3"
+
+services:
+  server:
+    image: monitor
+    ports:
+      - "0.0.0.0:50001:50001"
+    working_dir: "/code"
+    volumes:
+      - "./:/code"
+    environment:
+      - TZ=Europe/Moscow
+    command: python server.py
